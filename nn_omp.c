@@ -77,7 +77,8 @@ int main(int argc, char **argv) {
     else if (strcmp(sch_type, "guided") == 0) omp_set_schedule(omp_sched_guided, chunk);
 
     double learning_rate = 0.05;
-    double *X = malloc(N * D * sizeof(double)), *y = malloc(N * sizeof(int));
+    double *X = malloc(N * D * sizeof(double)); 
+    int *y = malloc(N * sizeof(int));
     double *W1 = malloc(D * H * sizeof(double)), *W2 = malloc(H * C * sizeof(double));
     double *b1 = calloc(H, sizeof(double)), *b2 = calloc(C, sizeof(double));
     double *dW1 = malloc(D * H * sizeof(double)), *dW2 = malloc(H * C * sizeof(double));
